@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#e73c7e">
+    <title>Главная</title>
+    
+    <!-- Подключаем глобальные стили -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style_index.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    
+    <!-- Preload для производительности -->
+    <link rel="preload" href="js/theme.js" as="script">
+    <link rel="preload" href="js/animations.js" as="script">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="password-page">
+    <!-- Декоративные элементы -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
+    <!-- Основной контейнер -->
+    <main class="container">
+        <div class="password-form-container glass-container fade-in">
+            <!-- Заголовок -->
+            <header class="form-header">
+                <div class="logo">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h1 class="form-title">Доступ к сайту</h1>
+                <p class="form-subtitle">Введите пароль для продолжения</p>
+            </header>
+            
+            <!-- Форма пароля -->
+            <form id="passwordForm" class="password-form">
+                <div class="form-group">
+                    <div class="password-input-group">
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                class="password-input" 
+                                placeholder="Введите пароль" 
+                                required
+                                autocomplete="current-password"
+                                autofocus
+                            >
+                            <button type="button" class="toggle-password" aria-label="Показать пароль">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Кнопка отправки -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                        <span>Войти</span>
+                        <i class="fas fa-arrow-right submit-icon"></i>
+                    </button>
+                </div>
+                
+                <!-- Сообщения -->
+                <div id="message" class="message" aria-live="polite"></div>
+                
+                <!-- Ссылки на другие страницы -->
+                <!-- <div class="form-links">
+                    <a href="pages/login_form.html" class="form-link">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Вход в аккаунт</span>
+                    </a>
+                    <a href="pages/register_form.html" class="form-link">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Регистрация</span>
+                    </a>
+                </div> -->
+            </form>
+            
+            <!-- Переключатель темы -->
+            <!-- <div class="theme-section">
+                <button id="themeToggle" class="btn theme-btn">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-text">Тёмная тема</span>
+                </button>
+            </div> -->
+            
+            <!-- Информация -->
+            <!-- <footer class="form-footer">
+                <p class="footer-text">
+                    <i class="fas fa-info-circle"></i>
+                    По умолчанию пароль: <code>1234</code>
+                </p>
+            </footer> -->
+        </div>
+    </main>
+    
+    <!-- Скрипты -->
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/password.js"></script>
+    
+    <!-- Инициализация -->
+    <script>
+        // Дополнительная инициализация для index.html
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔐 Страница пароля загружена');
+            
+            // Фокус на поле ввода
+            setTimeout(() => {
+                const passwordInput = document.getElementById('password');
+                if (passwordInput) {
+                    passwordInput.focus();
+                }
+            }, 300);
+        });
+    </script>
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/password.js"></script>
+</body>
+</html>

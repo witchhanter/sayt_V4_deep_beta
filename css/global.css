@@ -1,0 +1,650 @@
+/* ====================== GLOBAL STYLES ====================== */
+/* Все общие стили для ВСЕХ страниц проекта */
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Глобальные анимации */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(120deg); }
+    66% { transform: translateY(15px) rotate(240deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+/* CSS переменные для темы */
+:root {
+    /* Градиенты */
+    --gradient-light: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    --gradient-dark: linear-gradient(-45deg, #121212, #1a1a1a, #0d1a26, #15261f);
+    
+    /* Цвета стекла для светлой темы */
+    --glass-bg-light: rgba(255, 255, 255, 0.1);
+    --glass-border-light: rgba(255, 255, 255, 0.15);
+    --glass-shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    /* Цвета стекла для темной темы */
+    --glass-bg-dark: rgba(0, 0, 0, 0.2);
+    --glass-border-dark: rgba(255, 255, 255, 0.1);
+    --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    /* Текст */
+    --text-light: white;
+    --text-dark: rgba(255, 255, 255, 0.9);
+    
+    /* Акцентные цвета */
+    --accent-primary: #e73c7e;
+    --accent-secondary: #23a6d5;
+    --accent-success: #23d5ab;
+    --accent-error: #ff6b6b;
+    --accent-warning: #ffa726;
+    
+    /* Текущие значения (меняются темой) */
+    --current-gradient: var(--gradient-light);
+    --current-glass-bg: var(--glass-bg-light);
+    --current-glass-border: var(--glass-border-light);
+    --current-glass-shadow: var(--glass-shadow-light);
+    --current-text: var(--text-light);
+}
+
+/* Темная тема */
+[data-theme="dark"] {
+    --current-gradient: var(--gradient-dark);
+    --current-glass-bg: var(--glass-bg-dark);
+    --current-glass-border: var(--glass-border-dark);
+    --current-glass-shadow: var(--glass-shadow-dark);
+    --current-text: var(--text-dark);
+}
+
+/* Основные HTML элементы */
+html {
+    min-height: 100vh;
+    background: var(--current-gradient);
+    background-size: 400% 400%;
+    animation: gradientMove 20s ease infinite;
+    transition: background 0.5s ease;
+}
+
+body {
+    color: var(--current-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    transition: color 0.3s ease;
+    background: transparent;
+}
+
+/* Общие стили контейнеров */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.glass-container {
+    background: var(--current-glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--current-glass-border);
+    border-radius: 15px;
+    box-shadow: var(--current-glass-shadow);
+    transition: all 0.3s ease;
+}
+
+/* Общие стили кнопок */
+.btn {
+    background: var(--current-glass-bg);
+    border: 1px solid var(--current-glass-border);
+    color: var(--current-text);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: rgba(231, 60, 126, 0.2);
+    border-color: rgba(231, 60, 126, 0.3);
+}
+
+.btn-primary:hover {
+    background: rgba(231, 60, 126, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Общие стили форм */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--current-glass-border);
+    border-radius: 8px;
+    color: var(--current-text);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(231, 60, 126, 0.1);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Общие стили карточек */
+.card {
+    background: var(--current-glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--current-glass-border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Общие утилитарные классы */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.mt-1 { margin-top: 5px; }
+.mt-2 { margin-top: 10px; }
+.mt-3 { margin-top: 15px; }
+.mt-4 { margin-top: 20px; }
+.mt-5 { margin-top: 25px; }
+
+.mb-1 { margin-bottom: 5px; }
+.mb-2 { margin-bottom: 10px; }
+.mb-3 { margin-bottom: 15px; }
+.mb-4 { margin-bottom: 20px; }
+.mb-5 { margin-bottom: 25px; }
+
+.p-1 { padding: 5px; }
+.p-2 { padding: 10px; }
+.p-3 { padding: 15px; }
+.p-4 { padding: 20px; }
+.p-5 { padding: 25px; }
+
+.hidden { display: none !important; }
+.fade-in { animation: fadeIn 0.6s ease forwards; }
+.slide-in { animation: slideIn 0.6s ease forwards; }
+
+/* Общие стили для анимаций появления */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для скроллбара */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Плавающая кнопка темы (создается через JS) */
+.theme-toggle-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--current-glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--current-glass-border);
+    color: var(--current-text);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--current-glass-shadow);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease 0.5s forwards;
+    border: none;
+    outline: none;
+}
+
+.theme-toggle-floating:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Панель настроек */
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 350px;
+    max-width: 90%;
+    background: var(--current-glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--current-glass-border);
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.settings-panel.open {
+    transform: translateX(0);
+}
+
+.settings-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.settings-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Переключатели (switches) */
+.switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 34px;
+    transition: background 0.3s ease;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+    background: var(--accent-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.switch-label {
+    font-size: 14px;
+    color: var(--current-text);
+}
+
+/* Уведомления */
+.notification {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10001;
+    animation: slideInRight 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+/* Сообщения об ошибках/успехе */
+.message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.error-message {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: var(--accent-error);
+}
+
+.success-message {
+    background: rgba(35, 213, 171, 0.1);
+    border: 1px solid rgba(35, 213, 171, 0.3);
+    color: var(--accent-success);
+}
+
+/* Загрузка */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    .form-input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .settings-panel {
+        width: 300px;
+        padding: 15px;
+    }
+    
+    .theme-toggle-floating {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .notification {
+        bottom: 70px;
+        right: 15px;
+        left: 15px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+    
+    .settings-panel {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .theme-toggle-floating {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Отключение анимаций при настройках доступности */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .fade-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Стили для темной темы (дополнение) */
+[data-theme="dark"] .glass-container {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .btn-primary {
+    background: rgba(231, 60, 126, 0.15);
+}
+
+[data-theme="dark"] .btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .form-input {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .notification {
+    background: rgba(30, 30, 30, 0.95);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Иконки Font Awesome */
+.fas, .far, .fab {
+    font-size: 1em;
+}
+
+/* Улучшенный фокус для доступности */
+:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+
+/* В КОНЕЦ файла global.css добавь: */
+
+/* Исправление центрирования на мобильных */
+@media (max-width: 480px) {
+    .password-page,
+    .login-page,
+    .register-page {
+        display: block !important;
+        padding: 10px !important;
+    }
+    
+    .password-form-container,
+    .login-form-container,
+    .register-form-container {
+        margin: 20px auto !important;
+        width: 95% !important;
+        max-width: 95% !important;
+        padding: 20px !important;
+    }
+    
+    /* Убедись что форма видна и можно скроллить */
+    body {
+        overflow-y: auto !important;
+        height: auto !important;
+        min-height: 100vh !important;
+    }
+}
+
+/* Улучшение видимости окружностей */
+.bubble {
+    opacity: 0.6 !important;
+    filter: brightness(1.2) !important;
+}
+
+[data-theme="light"] .bubble {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Принудительное обновление темы на всех страницах */
+html[data-theme] {
+    transition: background 0.5s ease !important;
+}
+
+/* Улучшение скорости переключения тем */
+* {
+    transition: background-color 0.3s ease, 
+                border-color 0.3s ease,
+                color 0.3s ease !important;
+}

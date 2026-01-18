@@ -1,0 +1,551 @@
+/* style_register.css - Стили для страницы регистрации */
+
+/* Основная страница */
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративные пузыри */
+.bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    animation: float 20s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 180px;
+    height: 180px;
+    top: 70%;
+    left: 80%;
+    animation-delay: 5s;
+}
+
+.bubble:nth-child(3) {
+    width: 90px;
+    height: 90px;
+    top: 85%;
+    left: 15%;
+    animation-delay: 10s;
+}
+
+.bubble:nth-child(4) {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    left: 70%;
+    animation-delay: 15s;
+}
+
+/* Контейнер формы */
+.register-form-container {
+    background: var(--current-glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--current-glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: var(--current-glass-shadow);
+    position: relative;
+    z-index: 2;
+    animation: formAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Заголовок формы */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    background: rgba(35, 213, 171, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    color: var(--accent-success);
+    border: 2px solid rgba(35, 213, 171, 0.3);
+}
+
+.form-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--current-text);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Форма */
+.register-form {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.toggle-password:hover {
+    color: var(--current-text);
+}
+
+/* Подсказки для пароля */
+.password-hints {
+    margin-top: 10px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hint-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hint-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hint-item {
+    font-size: 12px;
+    color: var(--accent-error);
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hint-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Совпадение паролей */
+.password-match {
+    margin-top: 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Соглашение */
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    user-select: none;
+    line-height: 1.4;
+}
+
+.checkbox-label input {
+    display: none;
+}
+
+.checkmark {
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-top: 2px;
+}
+
+.checkbox-label input:checked + .checkmark {
+    background: var(--accent-success);
+    border-color: var(--accent-success);
+}
+
+.checkbox-label input:checked + .checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.terms-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.terms-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Кнопка отправки */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: rgba(35, 213, 171, 0.25);
+    border: 1px solid rgba(35, 213, 171, 0.4);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: rgba(35, 213, 171, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(35, 213, 171, 0.2);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.submit-icon {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) .submit-icon {
+    transform: scale(1.1);
+}
+
+/* Индикатор силы пароля */
+.password-strength {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.strength-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 10%;
+    background: #ff6b6b;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.strength-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #ff6b6b;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* Ссылки формы */
+.form-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Переключатель темы */
+.theme-section {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+}
+
+.theme-icon {
+    font-size: 18px;
+}
+
+.theme-text {
+    font-size: 14px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .register-page {
+        padding: 15px;
+    }
+    
+    .register-form-container {
+        padding: 30px 25px;
+        border-radius: 15px;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+    
+    .form-title {
+        font-size: 24px;
+    }
+    
+    .form-subtitle {
+        font-size: 14px;
+    }
+    
+    .form-input {
+        padding: 12px 40px 12px 12px;
+        font-size: 15px;
+    }
+    
+    .submit-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .form-link {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    
+    .checkbox-text {
+        font-size: 13px;
+    }
+    
+    .bubble:nth-child(1) { width: 100px; height: 100px; }
+    .bubble:nth-child(2) { width: 150px; height: 150px; }
+    .bubble:nth-child(3) { width: 70px; height: 70px; }
+    .bubble:nth-child(4) { width: 120px; height: 120px; }
+}
+
+@media (max-width: 480px) {
+    .register-form-container {
+        padding: 25px 20px;
+    }
+    
+    .form-title {
+        font-size: 22px;
+    }
+    
+    .form-links {
+        gap: 8px;
+    }
+    
+    .form-link {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .password-strength {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .strength-text {
+        text-align: left;
+        min-width: auto;
+    }
+    
+    .theme-btn {
+        width: 100%;
+    }
+    
+    .checkbox-label {
+        font-size: 12px;
+    }
+}
+
+/* Темная тема специфичные стили */
+[data-theme="dark"] .register-form-container {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .form-input {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .submit-btn {
+    background: rgba(35, 213, 171, 0.15);
+    border-color: rgba(35, 213, 171, 0.25);
+}
+
+[data-theme="dark"] .password-hints {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* Анимация формы */
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Анимации для подсказок */
+@keyframes hintUpdate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.hint-item {
+    animation: hintUpdate 0.3s ease;
+}
+
+
+
+
+/* Центрирование формы на маленьких экранах */
+@media (max-width: 480px) {
+    .password-form-container,
+    .login-form-container,
+    .register-form-container {
+        margin: 0 auto;
+        transform: none !important;
+    }
+}
+
+/* Улучшение видимости окружностей (bubbles) */
+.bubble {
+    background: rgba(255, 255, 255, 0.08) !important; /* Более яркие */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .bubble {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Возможность скролла формы */
+.password-form-container,
+.login-form-container,
+.register-form-container {
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Скрыть скроллбар для красоты */
+.password-form-container::-webkit-scrollbar,
+.login-form-container::-webkit-scrollbar,
+.register-form-container::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}

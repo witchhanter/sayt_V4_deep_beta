@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#e73c7e">
+    <title>My GitHub</title>
+    
+    <!-- Подключаем глобальные стили -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/style_github.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload -->
+    <link rel="preload" href="../js/theme.js" as="script">
+    <link rel="preload" href="../js/animations.js" as="script">
+</head>
+<body class="github-page">
+    <!-- Хедер -->
+    <header class="glass-header">
+        <div class="container header-container">
+            <div class="header-content">
+                <a href="gl.html" class="back-btn" title="Вернуться на главную">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Назад</span>
+                </a>
+                
+                <div class="page-title">
+                    <i class="fab fa-github"></i>
+                    <h1>GitHub</h1>
+                </div>
+                
+                <button id="themeToggle" class="theme-btn">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="content-wrapper">
+        <div class="container">
+            <!-- Профиль GitHub -->
+            <section class="profile-section fade-up">
+                <div class="profile-container glass-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="profile-name">witchhanter</h2>
+                            <p class="profile-username">
+                                <i class="fas fa-at"></i>
+                                @witchhanter
+                            </p>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-code-branch"></i>
+                                    <span class="stat-value">24</span>
+                                    <span class="stat-label">Репозитории</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <span class="stat-value">156</span>
+                                    <span class="stat-label">Звёзды</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-users"></i>
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Подписчики</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-bio">
+                        <h3>
+                            <i class="fas fa-user"></i>
+                            Обо мне
+                        </h3>
+                        <p>
+                            Full-stack разработчик с фокусом на современные веб-технологии. 
+                            Создаю интерактивные и отзывчивые веб-приложения с использованием 
+                            стеклянного дизайна и плавных анимаций.
+                        </p>
+                    </div>
+                    
+                    <div class="profile-actions">
+                        <a href="https://github.com/witchhanter" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fab fa-github"></i>
+                            <span>Открыть GitHub</span>
+                        </a>
+                        <a href="https://github.com/witchhanter?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn">
+                            <i class="fas fa-book"></i>
+                            <span>Все репозитории</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Популярные репозитории -->
+            <section class="repos-section fade-up" data-delay="100">
+                <h2 class="section-title">
+                    <i class="fas fa-fire"></i>
+                    Популярные репозитории
+                </h2>
+                
+                <div class="repos-grid">
+                    <!-- Репозиторий 1 -->
+                    <div class="repo-card glass-container">
+                        <div class="repo-header">
+                            <div class="repo-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="repo-info">
+                                <h3 class="repo-name">Liquid Glass UI</h3>
+                                <p class="repo-description">
+                                    Современная UI библиотека с эффектом стекла
+                                </p>
+                            </div>
+                            <span class="repo-badge">
+                                <i class="fas fa-star"></i>
+                                42
+                            </span>
+                        </div>
+                        
+                        <div class="repo-details">
+                            <div class="repo-lang">
+                                <span class="lang-color" style="background: #3572A5;"></span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="repo-updated">
+                                <i class="far fa-clock"></i>
+                                <span>Обновлён 2 дня назад</span>
+                            </div>
+                        </div>
+                        
+                        <div class="repo-actions">
+                            <a href="#" class="repo-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Открыть</span>
+                            </a>
+                            <button class="repo-star">
+                                <i class="far fa-star"></i>
+                                <span>Звезда</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Репозиторий 2 -->
+                    <div class="repo-card glass-container">
+                        <div class="repo-header">
+                            <div class="repo-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="repo-info">
+                                <h3 class="repo-name">Responsive Dashboard</h3>
+                                <p class="repo-description">
+                                    Адаптивная панель управления с аналитикой
+                                </p>
+                            </div>
+                            <span class="repo-badge">
+                                <i class="fas fa-star"></i>
+                                28
+                            </span>
+                        </div>
+                        
+                        <div class="repo-details">
+                            <div class="repo-lang">
+                                <span class="lang-color" style="background: #E34F26;"></span>
+                                <span>HTML/CSS</span>
+                            </div>
+                            <div class="repo-updated">
+                                <i class="far fa-clock"></i>
+                                <span>Обновлён неделю назад</span>
+                            </div>
+                        </div>
+                        
+                        <div class="repo-actions">
+                            <a href="#" class="repo-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Открыть</span>
+                            </a>
+                            <button class="repo-star">
+                                <i class="far fa-star"></i>
+                                <span>Звезда</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Репозиторий 3 -->
+                    <div class="repo-card glass-container">
+                        <div class="repo-header">
+                            <div class="repo-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="repo-info">
+                                <h3 class="repo-name">Glass Game Engine</h3>
+                                <p class="repo-description">
+                                    Игровой движок с физикой и 3D графикой
+                                </p>
+                            </div>
+                            <span class="repo-badge">
+                                <i class="fas fa-star"></i>
+                                35
+                            </span>
+                        </div>
+                        
+                        <div class="repo-details">
+                            <div class="repo-lang">
+                                <span class="lang-color" style="background: #4F5D95;"></span>
+                                <span>C++</span>
+                            </div>
+                            <div class="repo-updated">
+                                <i class="far fa-clock"></i>
+                                <span>Обновлён 3 дня назад</span>
+                            </div>
+                        </div>
+                        
+                        <div class="repo-actions">
+                            <a href="#" class="repo-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Открыть</span>
+                            </a>
+                            <button class="repo-star">
+                                <i class="far fa-star"></i>
+                                <span>Звезда</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Стек технологий -->
+            <section class="tech-section fade-up" data-delay="200">
+                <h2 class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    Стек технологий
+                </h2>
+                
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="tech-info">
+                            <h3>HTML5</h3>
+                            <div class="tech-progress">
+                                <div class="progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="tech-info">
+                            <h3>CSS3</h3>
+                            <div class="tech-progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="tech-info">
+                            <h3>JavaScript</h3>
+                            <div class="tech-progress">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="tech-info">
+                            <h3>React</h3>
+                            <div class="tech-progress">
+                                <div class="progress-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="tech-info">
+                            <h3>Node.js</h3>
+                            <div class="tech-progress">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="tech-info">
+                            <h3>MongoDB</h3>
+                            <div class="tech-progress">
+                                <div class="progress-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Статистика активности -->
+            <section class="activity-section fade-up" data-delay="300">
+                <h2 class="section-title">
+                    <i class="fas fa-chart-line"></i>
+                    Активность
+                </h2>
+                
+                <div class="activity-container glass-container">
+                    <div class="activity-chart">
+                        <div class="chart-placeholder">
+                            <div class="chart-bars">
+                                <div class="chart-bar" style="height: 80%"></div>
+                                <div class="chart-bar" style="height: 60%"></div>
+                                <div class="chart-bar" style="height: 90%"></div>
+                                <div class="chart-bar" style="height: 70%"></div>
+                                <div class="chart-bar" style="height: 85%"></div>
+                                <div class="chart-bar" style="height: 95%"></div>
+                                <div class="chart-bar" style="height: 65%"></div>
+                            </div>
+                            <div class="chart-labels">
+                                <span>Пн</span>
+                                <span>Вт</span>
+                                <span>Ср</span>
+                                <span>Чт</span>
+                                <span>Пт</span>
+                                <span>Сб</span>
+                                <span>Вс</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-stats">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-code-commit"></i>
+                            </div>
+                            <div class="activity-info">
+                                <h4>Коммиты за неделю</h4>
+                                <p class="activity-value">24</p>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <div class="activity-info">
+                                <h4>Изменённые строки</h4>
+                                <p class="activity-value">1,248</p>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="activity-info">
+                                <h4>Время кодинга</h4>
+                                <p class="activity-value">42 ч</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer fade-up">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">
+                    <i class="far fa-copyright"></i> 2025. Все права защищены.
+                </p>
+                <div class="footer-social">
+                    <a href="gl.html" class="social-btn" title="На главную">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <a href="tg.html" class="social-btn" title="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/animations.js"></script>
+    
+    <!-- Инициализация -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('💻 Страница GitHub загружена');
+            
+            // Анимация прогресс-баров
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                    bar.style.transition = 'width 1.5s ease';
+                }, 500);
+            });
+            
+            // Анимация chart bars
+            const chartBars = document.querySelectorAll('.chart-bar');
+            chartBars.forEach((bar, index) => {
+                const height = bar.style.height;
+                bar.style.height = '0';
+                setTimeout(() => {
+                    bar.style.height = height;
+                    bar.style.transition = 'height 0.8s ease ' + (index * 0.1) + 's';
+                }, 800);
+            });
+            
+            // Интерактивность звёзд
+            document.querySelectorAll('.repo-star').forEach(starBtn => {
+                starBtn.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    const count = this.closest('.repo-card').querySelector('.repo-badge');
+                    
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        this.style.color = '#fdd835';
+                        
+                        // Увеличить счётчик
+                        const current = parseInt(count.textContent);
+                        count.textContent = (current + 1).toString();
+                        count.style.animation = 'starPulse 0.5s ease';
+                        setTimeout(() => {
+                            count.style.animation = '';
+                        }, 500);
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        this.style.color = '';
+                        
+                        // Уменьшить счётчик
+                        const current = parseInt(count.textContent);
+                        count.textContent = (current - 1).toString();
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <!-- Анимация для звёзд -->
+    <style>
+        @keyframes starPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</body>
+</html>

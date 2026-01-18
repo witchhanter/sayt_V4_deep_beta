@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#e73c7e">
+    <title>Главная страница</title>
+    
+    <!-- Подключаем глобальные стили -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/style_gl.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload -->
+    <link rel="preload" href="../js/theme.js" as="script">
+    <link rel="preload" href="../js/animations.js" as="script">
+    <link rel="preload" href="../js/script_gl.js" as="script">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="glass-header" id="mainHeader">
+        <div class="container header-container">
+            <div class="header-content">
+                <!-- Информация о пользователе -->
+                <div class="user-info" id="userInfo">
+                    <div class="user-details">
+                        <span class="loading-text">
+                            <i class="fas fa-spinner fa-spin"></i> Загрузка...
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Навигация -->
+                <nav class="header-nav" aria-label="Основная навигация">
+                    <div class="nav-group">
+                        <a href="../index.html" class="nav-btn" title="Вернуться к паролю">
+                            <i class="fas fa-lock"></i>
+                            <span class="nav-text">Замок</span>
+                        </a>
+                        
+                        <a href="login_form.html" class="nav-btn" title="Войти в аккаунт">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span class="nav-text">Вход</span>
+                        </a>
+                        
+                        <a href="register_form.html" class="nav-btn" title="Зарегистрироваться">
+                            <i class="fas fa-user-plus"></i>
+                            <span class="nav-text">Регистрация</span>
+                        </a>
+                        
+                        <button class="nav-btn settings-btn" id="settingsBtn" title="Настройки">
+                            <i class="fas fa-cog"></i>
+                            <span class="nav-text">Настройки</span>
+                        </button>
+                        
+                        <button class="nav-btn logout-btn" id="logoutBtn" title="Выйти из аккаунта">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="nav-text">Выйти</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="content-wrapper">
+        <!-- Приветственная секция -->
+        <section class="welcome-section fade-up" aria-labelledby="welcomeTitle">
+            <div class="container">
+                <div class="welcome-content">
+                    <h1 id="welcomeTitle" class="welcome-title">
+                        <i class="fas fa-glass-cheers"></i>
+                        Добро пожаловать!
+                    </h1>
+                    <p class="welcome-subtitle">
+                        Выберите нужный раздел ниже. Все блоки интерактивны и кликабельны.
+                    </p>
+                    <div class="welcome-decoration">
+                        <div class="decoration-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Сетка карточек -->
+        <section class="grid-section" aria-label="Разделы сайта">
+            <div class="container">
+                <div class="grid-table">
+                    <!-- Карточка 1 -->
+                    <div class="grid-item fade-up" data-delay="100">
+                        <a href="https://witchhanterr.tilda.ws/portfolio" target="_blank" rel="noopener" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Портфолио</h3>
+                                <p class="card-desc">Моё портфолио с проектами и работами</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 2 -->
+                    <div class="grid-item fade-up" data-delay="200">
+                        <a href="my_github.html" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">GitHub</h3>
+                                <p class="card-desc">Мои проекты и репозитории на GitHub</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 3 -->
+                    <div class="grid-item fade-up" data-delay="300">
+                        <a href="#" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Инструменты</h3>
+                                <p class="card-desc">Полезные инструменты и утилиты</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 4 -->
+                    <div class="grid-item fade-up" data-delay="400">
+                        <a href="#" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Проекты</h3>
+                                <p class="card-desc">Мои текущие и завершенные проекты</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 5 -->
+                    <div class="grid-item fade-up" data-delay="500">
+                        <a href="#" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Дизайн</h3>
+                                <p class="card-desc">Дизайн-макеты и UI/UX работы</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 6 -->
+                    <div class="grid-item fade-up" data-delay="600">
+                        <a href="#" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Документация</h3>
+                                <p class="card-desc">Техническая документация и гайды</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 7 -->
+                    <div class="grid-item fade-up" data-delay="700">
+                        <a href="#" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Аналитика</h3>
+                                <p class="card-desc">Статистика и аналитические отчеты</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 8 -->
+                    <div class="grid-item fade-up" data-delay="800">
+                        <a href="#" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Блог</h3>
+                                <p class="card-desc">Статьи, мысли и обновления</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 9 -->
+                    <div class="grid-item fade-up" data-delay="900">
+                        <a href="#" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Помощь</h3>
+                                <p class="card-desc">FAQ и поддержка</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Карточка 10 -->
+                    <div class="grid-item fade-up" data-delay="1000">
+                        <a href="#" class="grid-card">
+                            <div class="card-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Настройки</h3>
+                                <p class="card-desc">Настройки системы и профиля</p>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer fade-up" aria-label="Подвал сайта">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-copyright">
+                        <i class="far fa-copyright"></i> 2025. Все права защищены.
+                    </p>
+                    <div class="footer-time" id="currentTime" aria-live="polite">
+                        <i class="far fa-clock"></i>
+                        <span>Загрузка времени...</span>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="tg.html" target="_blank" rel="noopener noreferrer" class="social-btn" title="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://github.com/witchhanter" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-btn" title="Контакты">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Панель настроек (скрыта по умолчанию) -->
+    <div id="settingsPanel" class="settings-panel" aria-hidden="true" aria-label="Панель настроек">
+        <div class="settings-header">
+            <h2 class="settings-title">
+                <i class="fas fa-cog"></i>
+                Настройки
+            </h2>
+            <button class="settings-close" id="closeSettings" aria-label="Закрыть настройки">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="settings-content">
+            <!-- Настройка темы -->
+            <div class="setting-group">
+                <h3 class="setting-title">
+                    <i class="fas fa-palette"></i>
+                    Тема
+                </h3>
+                <div class="theme-options">
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="light">
+                        <span class="theme-preview light-theme" title="Светлая тема"></span>
+                        <span class="theme-label">Светлая</span>
+                    </label>
+                    
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="dark">
+                        <span class="theme-preview dark-theme" title="Тёмная тема"></span>
+                        <span class="theme-label">Тёмная</span>
+                    </label>
+                    
+                    <label class="theme-option">
+                        <input type="radio" name="theme" value="auto">
+                        <span class="theme-preview auto-theme" title="Автоматически">
+                            <i class="fas fa-adjust"></i>
+                        </span>
+                        <span class="theme-label">Авто</span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Настройка анимаций -->
+            <div class="setting-group">
+                <h3 class="setting-title">
+                    <i class="fas fa-film"></i>
+                    Анимации
+                </h3>
+                <label class="switch">
+                    <input type="checkbox" id="animationsToggle" checked>
+                    <span class="slider"></span>
+                    <span class="switch-label">Включить анимации</span>
+                </label>
+                <p class="setting-description">
+                    Плавные переходы и анимации элементов
+                </p>
+            </div>
+            
+            <!-- Часовой пояс -->
+            <div class="setting-group">
+                <h3 class="setting-title">
+                    <i class="fas fa-globe"></i>
+                    Часовой пояс
+                </h3>
+                <select id="timezoneSelect" class="settings-select">
+                    <option value="auto">Автоматически</option>
+                    <option value="Europe/Moscow">Москва (GMT+3)</option>
+                    <option value="Europe/London">Лондон (GMT+0)</option>
+                    <option value="America/New_York">Нью-Йорк (GMT-5)</option>
+                    <option value="Asia/Tokyo">Токио (GMT+9)</option>
+                </select>
+            </div>
+            
+            <!-- Кнопки действий -->
+            <div class="settings-actions">
+                <button id="saveSettings" class="btn btn-primary">
+                    <i class="fas fa-save"></i>
+                    Сохранить
+                </button>
+                <button id="resetSettings" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i>
+                    Сбросить
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/script_gl.js"></script>
+
+</body>
+</html>

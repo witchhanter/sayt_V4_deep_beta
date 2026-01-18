@@ -1,0 +1,470 @@
+/* style_login.css - Стили для страницы входа */
+
+/* Основная страница */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративные пузыри */
+.bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    animation: float 25s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) {
+    width: 150px;
+    height: 150px;
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    top: 65%;
+    left: 85%;
+    animation-delay: 8s;
+}
+
+.bubble:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    top: 85%;
+    left: 20%;
+    animation-delay: 16s;
+}
+
+/* Контейнер формы */
+.login-form-container {
+    background: var(--current-glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--current-glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: var(--current-glass-shadow);
+    position: relative;
+    z-index: 2;
+    animation: formAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Заголовок формы */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    background: rgba(231, 60, 126, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    color: var(--accent-primary);
+    border: 2px solid rgba(231, 60, 126, 0.3);
+}
+
+.form-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--current-text);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Форма */
+.login-form {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.toggle-password:hover {
+    color: var(--current-text);
+}
+
+/* Чекбокс "Запомнить меня" */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    user-select: none;
+}
+
+.checkbox-label input {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input:checked + .checkmark {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.checkbox-label input:checked + .checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox-text {
+    font-size: 14px;
+}
+
+/* Кнопка отправки */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: rgba(231, 60, 126, 0.25);
+    border: 1px solid rgba(231, 60, 126, 0.4);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: rgba(231, 60, 126, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(231, 60, 126, 0.2);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.submit-icon {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) .submit-icon {
+    transform: translateX(5px);
+}
+
+/* Ссылки формы */
+.form-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Демо данные */
+.demo-credentials {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.demo-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.demo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.demo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.demo-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.demo-value {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    color: var(--accent-success);
+    font-size: 12px;
+}
+
+/* Переключатель темы */
+.theme-section {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+}
+
+.theme-icon {
+    font-size: 18px;
+}
+
+.theme-text {
+    font-size: 14px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .login-page {
+        padding: 15px;
+    }
+    
+    .login-form-container {
+        padding: 30px 25px;
+        border-radius: 15px;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+    
+    .form-title {
+        font-size: 24px;
+    }
+    
+    .form-subtitle {
+        font-size: 14px;
+    }
+    
+    .form-input {
+        padding: 12px 40px 12px 12px;
+        font-size: 15px;
+    }
+    
+    .submit-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .form-link {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    
+    .bubble:nth-child(1) { width: 120px; height: 120px; }
+    .bubble:nth-child(2) { width: 80px; height: 80px; }
+    .bubble:nth-child(3) { width: 60px; height: 60px; }
+}
+
+@media (max-width: 480px) {
+    .login-form-container {
+        padding: 25px 20px;
+    }
+    
+    .form-title {
+        font-size: 22px;
+    }
+    
+    .form-links {
+        gap: 8px;
+    }
+    
+    .form-link {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .demo-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .theme-btn {
+        width: 100%;
+    }
+}
+
+/* Темная тема специфичные стили */
+[data-theme="dark"] .login-form-container {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .form-input {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .submit-btn {
+    background: rgba(231, 60, 126, 0.15);
+    border-color: rgba(231, 60, 126, 0.25);
+}
+
+[data-theme="dark"] .demo-credentials {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Центрирование формы на маленьких экранах */
+@media (max-width: 480px) {
+    .password-form-container,
+    .login-form-container,
+    .register-form-container {
+        margin: 0 auto;
+        transform: none !important;
+    }
+}
+
+/* Улучшение видимости окружностей (bubbles) */
+.bubble {
+    background: rgba(255, 255, 255, 0.08) !important; /* Более яркие */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .bubble {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Возможность скролла формы */
+.password-form-container,
+.login-form-container,
+.register-form-container {
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Скрыть скроллбар для красоты */
+.password-form-container::-webkit-scrollbar,
+.login-form-container::-webkit-scrollbar,
+.register-form-container::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}

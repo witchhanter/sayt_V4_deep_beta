@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#e73c7e">
+    <title>Telegram</title>
+    
+    <!-- Подключаем глобальные стили -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/style_tg.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload -->
+    <link rel="preload" href="../js/theme.js" as="script">
+    <link rel="preload" href="../js/animations.js" as="script">
+</head>
+<body class="tg-page">
+    <!-- Хедер -->
+    <header class="glass-header">
+        <div class="container header-container">
+            <div class="header-content">
+                <a href="gl.html" class="back-btn" title="Вернуться на главную">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Назад</span>
+                </a>
+                
+                <div class="page-title">
+                    <i class="fab fa-telegram"></i>
+                    <h1>Telegram</h1>
+                </div>
+                
+                <!-- <button id="themeToggle" class="theme-btn">
+                    <span class="theme-icon">🌙</span>
+                </button> -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="content-wrapper">
+        <div class="container">
+            <!-- Приветствие -->
+            <section class="welcome-section fade-up">
+                <div class="welcome-content">
+                    <h2 class="section-title">
+                        <i class="fab fa-telegram"></i>
+                        Мои Telegram контакты
+                    </h2>
+                    <p class="section-subtitle">
+                        Свяжитесь со мной через Telegram для быстрой коммуникации
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Карточки контактов -->
+            <div class="contacts-grid">
+                <!-- Основной контакт -->
+                <div class="contact-card glass-container fade-up" data-delay="100">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3 class="contact-name">Основной канал //В разработке</h3>
+                        <p class="contact-description">
+                            Новости, анонсы и обновления проектов
+                        </p>
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>Подписчики: +</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>Обновления: </span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://t.me/witchhanter" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <span>Перейти в Telegram</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <!-- Чат поддержки -->
+                <div class="contact-card glass-container fade-up" data-delay="200">
+                    <div class="contact-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3 class="contact-name">Чат поддержки //В разработке</h3>
+                        <p class="contact-description">
+                            Вопросы, помощь и обсуждение проектов
+                        </p>
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <i class="fas fa-comment-dots"></i>
+                                <span>Активные обсуждения</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-headset"></i>
+                                <span>Поддержка 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://t.me/witchhanter_chat" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <span>Присоединиться к чату</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <!-- Личные сообщения -->
+                <div class="contact-card glass-container fade-up" data-delay="300">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3 class="contact-name">Личные //В разработке</h3>
+                        <p class="contact-description">
+                            Для приватных вопросов и сотрудничества
+                        </p>
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Конфиденциально</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Ответ в течение 24 часов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://t.me/witchhanter_pm" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <span>Написать в ЛС</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- QR-код -->
+            <div class="qr-section fade-up" data-delay="400">
+                <div class="qr-container glass-container">
+                    <div class="qr-header">
+                        <i class="fas fa-qrcode"></i>
+                        <h3>Telegram QR-код</h3>
+                    </div>
+                    <div class="qr-content">
+                        <div class="qr-code-placeholder">
+                            <div class="qr-code">
+                                <!-- Здесь будет SVG или изображение QR-кода -->
+                                <img src="../images/tg_qr_2.png">
+                                <!-- <div class="qr-pattern">
+                                    <div class="qr-square"></div>
+                                    <div class="qr-square"></div>
+                                    <div class="qr-square"></div>
+                                </div> -->
+                                <!-- <div class="qr-text">
+                                    <i class="fab fa-telegram"></i>
+                                    <span>witchhanter</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="qr-instructions">
+                            <h4>Как использовать:</h4>
+                            <ol class="instructions-list">
+                                <li>Откройте приложение Telegram</li>
+                                <li>Нажмите на иконку поиска</li>
+                                <li>Выберите "Scan QR Code"</li>
+                                <li>Наведите камеру на этот код</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Дополнительная информация -->
+            <div class="info-section fade-up" data-delay="500">
+                <div class="info-container glass-container">
+                    <h3 class="info-title">
+                        <i class="fas fa-info-circle"></i>
+                        Полезная информация
+                    </h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Уведомления</h4>
+                                <p>Включите уведомления в Telegram, чтобы не пропустить важные обновления</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Избранное</h4>
+                                <p>Добавьте наш канал в избранное для быстрого доступа</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Поделиться</h4>
+                                <p>Расскажите друзьям о нашем Telegram канале</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer fade-up">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">
+                    <i class="far fa-copyright"></i> 2025. Все права защищены.
+                </p>
+                <div class="footer-social">
+                    <a href="gl.html" class="social-btn" title="На главную">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <a href="my_github.html" class="social-btn" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/animations.js"></script>
+    
+    <!-- Инициализация -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📱 Страница Telegram загружена');
+            
+            // Анимация QR-кода
+            const qrCode = document.querySelector('.qr-code');
+            if (qrCode) {
+                setTimeout(() => {
+                    qrCode.classList.add('animated');
+                }, 1000);
+            }
+            
+            // Интерактивность карточек
+            document.querySelectorAll('.contact-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.closest('.contact-link')) {
+                        this.style.transform = 'scale(0.98)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 200);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
